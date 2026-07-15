@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSight AI - Premium Investment Research & Market Intelligence</title>
+    
+    <!-- CSS Dependencies -->
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Icons dependency (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-mark">
+                    <i class="fa-solid fa-chart-line logo-logo"></i>
+                </div>
+                <span class="logo-text">FinSight AI</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a class="nav-item active" data-tab="dashboard">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" data-tab="compare">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>Stock Compare</span>
+                </a>
+                <a class="nav-item" data-tab="risk">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Risk Analytics</span>
+                </a>
+                <a class="nav-item" data-tab="guide">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Watson Assist</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="sidebar-status-dot"></div>
+                <span class="sidebar-status-text">Market Feed: Streaming</span>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-content">
+            
+            <!-- Live Ticker at the absolute top -->
+            <div class="ticker-wrap" id="ticker-wrap"></div>
+            
+            <div class="dashboard-workspace">
+                
+                <!-- ====== VIEW 1: DASHBOARD OVERVIEW ====== -->
+                <div class="tab-view active" id="dashboard-view">
+                    
+                    <!-- Hero Section -->
+                    <section class="hero-card">
+                        <div class="hero-badge">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Orchestrated Market Intelligence</span>
+                        </div>
+                        <h1 class="hero-title">AI-Powered Investment Research Portal</h1>
+                        <p class="hero-desc">
+                            Analyze assets, evaluate volatility, examine complex portfolio structures and compare historical equities. Explore deep visual financial indicators and leverage our embedded IBM Watson Orchestrate Assistant below to solve specialized queries in real time.
+                        </p>
+                        <div class="hero-ctas">
+                            <button class="btn-primary" onclick="triggerWatsonHighlight('Compare Apple and Microsoft over the last five years.')">
+                                <i class="fa-solid fa-robot"></i> Ask Financial Assistant
+                            </button>
+                            <a href="#market-indices" class="btn-secondary">
+                                <i class="fa-solid fa-wave-square"></i> Explore Markets
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Market Index Cards -->
+                    <div class="section-header" id="market-indices">
+                        <div>
+                            <h2 class="section-title">Global Indices Stream</h2>
+                            <p class="section-subtitle">Real-time composite indices feed with automated sparkline telemetry</p>
+                        </div>
+                    </div>
+                    
+                    <div class="indices-grid">
+                        <div class="index-card" id="idx-SP500"></div>
+                        <div class="index-card" id="idx-NASDAQ"></div>
+                        <div class="index-card" id="idx-DOWJONES"></div>
+                        <div class="index-card" id="idx-VIX"></div>
+                    </div>
+
+                    <!-- Features Section -->
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Core Research Features</h2>
+                            <p class="section-subtitle">Premium analytical models built-in for deep stock research</p>
+                        </div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-history"></i></div>
+                            <h3 class="card-title">Historical Market Analysis</h3>
+                            <p class="card-desc">Parse over 20 years of trade history to understand market beta, price adjustments, and volatility curves.</p>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h3 class="card-title">Portfolio Risk Analysis</h3>
+                            <p class="card-desc">Evaluate asset concentrations, sector risk exposure, and get automated alerts for capital allocation.</p>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-shuffle"></i></div>
+                            <h3 class="card-title">Company Comparison</h3>
+                            <p class="card-desc">Side-by-side comparative grids highlighting multiples, profit margins, growth velocity, and general risk metrics.</p>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h3 class="card-title">Financial Insights</h3>
+                            <p class="card-desc">Leverage advanced neural models to summarize key valuation milestones and corporate decisions.</p>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3 class="card-title">Market Intelligence</h3>
+                            <p class="card-desc">Curated summaries explaining unexpected equity volatility and intraday sector breakouts.</p>
+                        </div>
+                        <div class="glass-card">
+                            <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h3 class="card-title">Earnings Analysis</h3>
+                            <p class="card-desc">Decipher SEC documentation, conference transcripts, EPS beats, and forward guides instantly.</p>
+                        </div>
+                    </div>
+
+                    <!-- Example Prompt Cards -->
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Ask Assistant Anything</h2>
+                            <p class="section-subtitle">Select a research starter query to consult Watson Orchestrate agent</p>
+                        </div>
+                    </div>
+
+                    <div class="prompts-container">
+                        <div class="prompt-list">
+                            <div class="prompt-card">
+                                <i class="fa-solid fa-circle-question prompt-icon"></i>
+                                <span class="prompt-text">Why did NVIDIA fall today?</span>
+                                <i class="fa-solid fa-arrow-right prompt-arrow"></i>
+                            </div>
+                            <div class="prompt-card">
+                                <i class="fa-solid fa-circle-question prompt-icon"></i>
+                                <span class="prompt-text">Compare Apple and Microsoft over the last five years.</span>
+                                <i class="fa-solid fa-arrow-right prompt-arrow"></i>
+                            </div>
+                            <div class="prompt-card">
+                                <i class="fa-solid fa-circle-question prompt-icon"></i>
+                                <span class="prompt-text">What are the risks of holding only technology stocks?</span>
+                                <i class="fa-solid fa-arrow-right prompt-arrow"></i>
+                            </div>
+                            <div class="prompt-card">
+                                <i class="fa-solid fa-circle-question prompt-icon"></i>
+                                <span class="prompt-text">Explain Tesla's recent performance.</span>
+                                <i class="fa-solid fa-arrow-right prompt-arrow"></i>
+                            </div>
+                            <div class="prompt-card">
+                                <i class="fa-solid fa-circle-question prompt-icon"></i>
+                                <span class="prompt-text">Which sectors outperform during high interest rates?</span>
+                                <i class="fa-solid fa-arrow-right prompt-arrow"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== VIEW 2: STOCK COMPARE VIEW ====== -->
+                <div class="tab-view" id="compare-view">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Equity Comparison Terminal</h2>
+                            <p class="section-subtitle">Side-by-side evaluation of leading commercial assets</p>
+                        </div>
+                    </div>
+
+                    <div class="comparison-container">
+                        <!-- Selectors -->
+                        <div class="glass-card compare-selector-card">
+                            <h3 class="card-title"><i class="fa-solid fa-sliders"></i> Select Assests</h3>
+                            <div class="selector-group">
+                                <label for="compStockA">Asset A (Indigo)</label>
+                                <select class="custom-select" id="compStockA">
+                                    <option value="AAPL" selected>Apple Inc. (AAPL)</option>
+                                    <option value="MSFT">Microsoft Corp. (MSFT)</option>
+                                    <option value="NVDA">NVIDIA Corp. (NVDA)</option>
+                                    <option value="TSLA">Tesla Inc. (TSLA)</option>
+                                    <option value="IBM">IBM Corp. (IBM)</option>
+                                </select>
+                            </div>
+                            <div class="selector-group">
+                                <label for="compStockB">Asset B (Cyan)</label>
+                                <select class="custom-select" id="compStockB">
+                                    <option value="AAPL">Apple Inc. (AAPL)</option>
+                                    <option value="MSFT" selected>Microsoft Corp. (MSFT)</option>
+                                    <option value="NVDA">NVIDIA Corp. (NVDA)</option>
+                                    <option value="TSLA">Tesla Inc. (TSLA)</option>
+                                    <option value="IBM">IBM Corp. (IBM)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Results grid -->
+                        <div class="glass-card comparison-results-card">
+                            <div class="compare-header-row">
+                                <div class="company-badge-display">
+                                    <span class="comp-badge comp-a" id="compBadgeA">AAPL</span>
+                                    <span class="vs-divider">VS</span>
+                                    <span class="comp-badge comp-b" id="compBadgeB">MSFT</span>
+                                </div>
+                                <div style="text-align:right;">
+                                    <div style="font-size:12px; color:var(--text-muted);">Dynamic evaluation</div>
+                                    <div style="font-size:13px; font-weight:600; color:var(--accent-emerald);" id="compNameA">Apple Inc.</div>
+                                    <div style="font-size:13px; font-weight:600; color:var(--accent-cyan);" id="compNameB">Microsoft Corp.</div>
+                                </div>
+                            </div>
+
+                            <div class="compare-metrics-list">
+                                <!-- PE -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">P/E Ratio (Lower is preferred)</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-pe">31.2</span> vs 
+                                            <span class="metric-value-b" id="valB-pe">34.5</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-pe"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-pe"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Market Cap -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">Market Capitalization</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-mcap">3.38T</span> vs 
+                                            <span class="metric-value-b" id="valB-mcap">3.25T</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-mcap"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-mcap"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Revenue Growth -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">Intraday / Revenue Growth (YoY)</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-growth">5.2%</span> vs 
+                                            <span class="metric-value-b" id="valB-growth">12.4%</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-growth"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-growth"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Profit Margin -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">Operating Profit Margin</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-profit">26.3%</span> vs 
+                                            <span class="metric-value-b" id="valB-profit">36.2%</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-profit"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-profit"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Risk Score -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">Beta Volatility Rating</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-risk">Low</span> vs 
+                                            <span class="metric-value-b" id="valB-risk">Low</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-risk"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-risk"></div>
+                                    </div>
+                                </div>
+
+                                <!-- FinSight Score -->
+                                <div class="metric-row">
+                                    <div class="metric-label-group">
+                                        <span class="metric-name">Proprietary Health Rating</span>
+                                        <span>
+                                            <span class="metric-value-a" id="valA-score">85</span> vs 
+                                            <span class="metric-value-b" id="valB-score">89</span>
+                                        </span>
+                                    </div>
+                                    <div class="compare-gauge">
+                                        <div class="gauge-bar-a" id="gaugeA-score"></div>
+                                        <div class="gauge-bar-b" id="gaugeB-score"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== VIEW 3: PORTFOLIO RISK VIEW ====== -->
+                <div class="tab-view" id="risk-view">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Portfolio Risk Modeler</h2>
+                            <p class="section-subtitle">Simulate asset exposures to get dynamic concentration alerts</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="risk-calc-grid">
+                            <!-- Sliders -->
+                            <div class="risk-controls">
+                                <h3 class="card-title" style="margin-bottom:10px;"><i class="fa-solid fa-sliders"></i> Sector Allocations (Sum to 100%)</h3>
+                                
+                                <div class="slider-group">
+                                    <div class="slider-info">
+                                        <span class="slider-label"><i class="fa-solid fa-microchip" style="color:#818cf8; margin-right:8px;"></i> Technology</span>
+                                        <span class="slider-val" id="techVal">40%</span>
+                                    </div>
+                                    <input type="range" class="risk-slider" id="techSlider" min="0" max="100" value="40">
+                                </div>
+
+                                <div class="slider-group">
+                                    <div class="slider-info">
+                                        <span class="slider-label"><i class="fa-solid fa-building-columns" style="color:#fbbf24; margin-right:8px;"></i> Financials</span>
+                                        <span class="slider-val" id="financeVal">20%</span>
+                                    </div>
+                                    <input type="range" class="risk-slider" id="financeSlider" min="0" max="100" value="20">
+                                </div>
+
+                                <div class="slider-group">
+                                    <div class="slider-info">
+                                        <span class="slider-label"><i class="fa-solid fa-heart-pulse" style="color:#34d399; margin-right:8px;"></i> Healthcare</span>
+                                        <span class="slider-val" id="healthVal">25%</span>
+                                    </div>
+                                    <input type="range" class="risk-slider" id="healthSlider" min="0" max="100" value="25">
+                                </div>
+
+                                <div class="slider-group">
+                                    <div class="slider-info">
+                                        <span class="slider-label"><i class="fa-solid fa-bolt" style="color:#f87171; margin-right:8px;"></i> Energy</span>
+                                        <span class="slider-val" id="energyVal">15%</span>
+                                    </div>
+                                    <input type="range" class="risk-slider" id="energySlider" min="0" max="100" value="15">
+                                </div>
+                            </div>
+
+                            <!-- visualization donut -->
+                            <div class="risk-visualization-card">
+                                <h3 class="card-title"><i class="fa-solid fa-pie-chart"></i> Risk Structure Diagram</h3>
+                                
+                                <div class="svg-donut-container">
+                                    <svg class="svg-donut" viewBox="0 0 220 220">
+                                        <!-- background ring -->
+                                        <circle class="donut-ring" cx="110" cy="110" r="70"></circle>
+                                        
+                                        <!-- technology segment -->
+                                        <circle class="donut-segment" id="donut-seg-tech" cx="110" cy="110" r="70" stroke="#818cf8"></circle>
+                                        
+                                        <!-- financials segment -->
+                                        <circle class="donut-segment" id="donut-seg-finance" cx="110" cy="110" r="70" stroke="#fbbf24"></circle>
+                                        
+                                        <!-- healthcare segment -->
+                                        <circle class="donut-segment" id="donut-seg-health" cx="110" cy="110" r="70" stroke="#34d399"></circle>
+                                        
+                                        <!-- energy segment -->
+                                        <circle class="donut-segment" id="donut-seg-energy" cx="110" cy="110" r="70" stroke="#f87171"></circle>
+                                    </svg>
+                                    
+                                    <div class="donut-center-labels">
+                                        <div class="donut-center-title">Beta Risk</div>
+                                        <div class="donut-center-value" id="portfolioRiskVal">5.8/10</div>
+                                        <div class="donut-center-desc" id="portfolioRiskDesc">MODERATE</div>
+                                    </div>
+                                </div>
+
+                                <div class="risk-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background:#818cf8;"></div>
+                                        <span>Technology</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background:#fbbf24;"></div>
+                                        <span>Financials</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background:#34d399;"></div>
+                                        <span>Healthcare</span>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color" style="background:#f87171;"></div>
+                                        <span>Energy</span>
+                                    </div>
+                                </div>
+
+                                <!-- dynamic risk output alert box -->
+                                <div class="risk-alert-box orange" id="portfolioRiskAlert">
+                                    <i class="fa-solid fa-triangle-exclamation risk-alert-icon"></i>
+                                    <span>Allocations remain balanced but moderate. Watch for upcoming tech index adjustments.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ====== VIEW 4: WATSON INFORMATION GUIDE ====== -->
+                <div class="tab-view" id="guide-view">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title text-gradient">IBM Watson Orchestrate Portal</h2>
+                            <p class="section-subtitle">Configuring and accessing your artificial financial coworker</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card" style="display-flex; flex-direction:column; gap:20px; max-width:800px; padding:30px;">
+                        <div style="display:flex; align-items:center; gap:15px; margin-bottom:15px;">
+                            <div class="card-icon" style="margin-bottom:0; background:rgba(6, 182, 212, 0.1); color:var(--accent-cyan); border-color:rgba(6, 182, 212, 0.25);">
+                                <i class="fa-solid fa-robot"></i>
+                            </div>
+                            <div>
+                                <h3 class="card-title" style="margin-bottom:2px;">FinSight AI Assist Status: Activated</h3>
+                                <p style="font-size:13px; color:var(--text-secondary);">Deployment: ibmcloud // region: au-syd</p>
+                            </div>
+                        </div>
+
+                        <p class="card-desc" style="margin-bottom:20px; line-height:1.6; font-size:14.5px;">
+                            Watson Orchestrate acts as your autonomous investment coworker. Instead of searching multiple documents, websites, and data sources, you can ask questions directly in the chat widget located at the bottom-right corner of this terminal.
+                        </p>
+
+                        <div style="border-top:1px solid var(--border-color); padding-top:20px;">
+                            <h4 style="font-size:14px; font-weight:700; margin-bottom:12px; text-transform:uppercase; color:var(--accent-primary); letter-spacing:0.5px;">Agent Configuration Summary</h4>
+                            <div style="background:rgba(0,0,0,0.2); padding:15px; border-radius:10px; font-family:monospace; font-size:12px; color:var(--text-secondary); line-height:1.6; border:1px solid var(--border-color);">
+                                <span style="color:#818cf8;">orchestrationID:</span> "7771b0c18834492aa4dee4d6786fcc61_7d81a8f2-7516-478f-8781-e882f0ffcb5f"<br>
+                                <span style="color:#818cf8;">agentId:</span> "fca61dde-115c-4d70-bd4d-80962c2e11d5"<br>
+                                <span style="color:#818cf8;">deployment:</span> "ibmcloud" (au-syd)<br>
+                                <span style="color:#818cf8;">status:</span> "ready"
+                            </div>
+                        </div>
+
+                        <div style="margin-top:20px; display:flex; gap:12px;">
+                            <button class="btn-primary" onclick="triggerWatsonHighlight('Explain Tesla\'s recent performance.')">
+                                <i class="fa-solid fa-circle-play"></i> Launch Chat Spotlight
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Footer -->
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo"></div>
+                        <span style="font-family:var(--font-display); font-weight:700; font-size:14px; color:white;">FinSight AI</span>
+                        <span class="footer-text">© 2026. All rights reserved.</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="#" class="nav-item-link">Dashboard</a>
+                        <a href="#" class="nav-item-link">Terms of Service</a>
+                        <a href="#" class="nav-item-link">Privacy Regulations</a>
+                        <a href="#" class="nav-item-link">Watson Orchestrate Specs</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+        
+    </div>
+
+    <!-- Watson x Orchestrate Integration Script -->
+    <div id="root"></div>
+
+    <script>
+      window.wxOConfiguration = {
+        orchestrationID: "7771b0c18834492aa4dee4d6786fcc61_7d81a8f2-7516-478f-8781-e882f0ffcb5f",
+        hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+        rootElementID: "root",
+        deploymentPlatform: "ibmcloud",
+        crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/7771b0c18834492aa4dee4d6786fcc61:7d81a8f2-7516-478f-8781-e882f0ffcb5f::",
+        chatOptions: {
+            agentId: "fca61dde-115c-4d70-bd4d-80962c2e11d5",
+        }
+      };
+
+      setTimeout(function () {
+        const script = document.createElement('script');
+
+        script.src =
+          `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+
+        script.addEventListener('load', function () {
+          wxoLoader.init();
+        });
+
+        document.head.appendChild(script);
+      }, 0);
+    </script>
+
+    <!-- App Logic Script -->
+    <script src="app.js"></script>
+    
+</body>
+</html>

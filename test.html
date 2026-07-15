@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinSight - AI Investment Research Portal</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f5f7fb;
+    color:#1f2937;
+}
+header{
+    padding:60px 10%;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+header h1{font-size:56px;margin:0;}
+header p{font-size:20px;max-width:700px;line-height:1.7;}
+.container{
+    padding:50px 10%;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.card{
+    background:white;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+.card h2{
+    margin-top:0;
+}
+.banner{
+    margin-top:40px;
+    padding:30px;
+    border-radius:14px;
+    background:#dbeafe;
+}
+footer{
+    margin-top:50px;
+    padding:30px;
+    text-align:center;
+    background:#0f172a;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>FinSight</h1>
+<p>
+Research stocks, understand earnings, compare companies,
+analyze market trends and explore portfolio risk using an AI financial assistant.
+Open the chat widget in the bottom-right corner to ask questions such as:
+</p>
+<ul>
+<li>Why did NVIDIA fall today?</li>
+<li>Compare Apple and Microsoft over the last 5 years.</li>
+<li>What are the risks of investing heavily in technology stocks?</li>
+<li>Summarize Tesla's recent performance.</li>
+</ul>
+</header>
+
+<div class="container">
+
+<div class="grid">
+<div class="card">
+<h2>📈 Stock Research</h2>
+<p>Analyze historical trends, volatility, moving averages and returns using NASDAQ market data.</p>
+</div>
+
+<div class="card">
+<h2>🏢 Company Comparison</h2>
+<p>Compare companies across performance metrics, growth and risk characteristics.</p>
+</div>
+
+<div class="card">
+<h2>⚠️ Risk Analysis</h2>
+<p>Understand portfolio concentration, sector exposure and diversification risks.</p>
+</div>
+
+<div class="card">
+<h2>📰 Market Insights</h2>
+<p>Get explanations for market movements and company events through conversational AI.</p>
+</div>
+</div>
+
+<div class="banner">
+<h2>Ask the Financial Assistant</h2>
+<p>The AI assistant is available in the chat widget and can answer investment research questions in real time.</p>
+</div>
+
+</div>
+
+<footer>
+FinSight • Powered by IBM Watson Orchestrate
+</footer>
+
+<div id="root"></div>
+
+<script>
+window.wxOConfiguration = {
+    orchestrationID: "7771b0c18834492aa4dee4d6786fcc61_7d81a8f2-7516-478f-8781-e882f0ffcb5f",
+    hostURL: "https://au-syd.watson-orchestrate.cloud.ibm.com",
+    rootElementID: "root",
+    deploymentPlatform: "ibmcloud",
+    crn: "crn:v1:bluemix:public:watsonx-orchestrate:au-syd:a/7771b0c18834492aa4dee4d6786fcc61:7d81a8f2-7516-478f-8781-e882f0ffcb5f::",
+    chatOptions: {
+        agentId: "fca61dde-115c-4d70-bd4d-80962c2e11d5",
+    }
+};
+
+setTimeout(function () {
+    const script = document.createElement('script');
+    script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+    script.addEventListener('load', function () {
+        wxoLoader.init();
+    });
+    document.head.appendChild(script);
+},0);
+</script>
+
+</body>
+</html>
